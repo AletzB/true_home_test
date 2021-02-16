@@ -1,0 +1,11 @@
+django 
+djangorestframework
+django-cors-headers 
+gunicorn 
+psycopg2-binary 
+django-admin-generator 
+django-smart-selects 
+beautifulsoup4
+Celery
+aiohttp
+lxml

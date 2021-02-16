@@ -1,0 +1,24 @@
+version: '3.6'
+
+services:
+  truehome_db:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=truehome_db
+    volumes:
+      - truehome_db_postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+  truehome:
+    build: .
+    volumes: 
+      - truehome_db_postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 8000:8000
+    depends_on:
+      - truehome_db
+volumes:
+  truehome_db_postgres_data:
+    
